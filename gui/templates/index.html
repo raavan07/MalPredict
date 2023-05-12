@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Android malware prediction website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+  </head>
+  
+  <body background="/home/dheeraj/Visualstudioprojects/mypersnalwebsite/images.jpeg">
+    <div class="container">
+      <header class="flex">
+        <div class="logo">MalPredict<span>.</span></div>
+        
+      </header>
+
+      <div class="main flex">
+        <div class="main-one">
+          <h1> Welcome to</h1>
+          <span class="auto">Android malware prediction website!</span>
+          <p>
+            Here, you can upload an Android app and our system will analyze it to determine whether it is likely to be malware. With the proliferation of malware on the Android platform, it is important to be able to identify and protect against potentially harmful apps. Our prediction system uses machine learning algorithms to analyze the characteristics of an app and make a prediction about its likelihood of being malware.
+
+          </p>
+          
+        </div>
+        <div class="main-two">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Cybersecurity.png/2560px-Cybersecurity.png" 
+          width="800"
+          height="400" />
+        </div>
+      </div>
+
+      <section class="projects" id="project">
+        <h1>To get <br /><span>started</span></h1>
+        <p>
+          
+
+          To get started, simply upload an Android app by clicking the "Choose File" button and selecting the app's APK file. Our system will analyze the app and provide a prediction within a few minutes. Please note that our prediction is not a definitive answer and should be used as one tool in your overall strategy for protecting against malware.
+          Thank you for using our website, and stay safe out there!
+        </p>
+        
+        <form method="POST" enctype="multipart/form-data" action="{{ url_for('upload') }}">
+          <input type="file" name="file">
+          <input type="submit" value="Upload">
+        </form>
+        
+        <br>
+        <br>
+        <br>
+        <h1>{{val}}</h1>
+      
+      <!-- <div class="main-one">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVeVEm7EQc6Id_df1kyOEgjzoPjqwlDmsLTQ&usqp=CAU"  
+        width="800"
+        height="400" 
+        />
+      </div> -->
+    </div>
+      
+       
+        
+      </section>
+      
+      <script>
+        function uploadAPK() {
+          var apkFile = document.getElementById("apk-file").files[0];
+          if (apkFile) {
+            // Code to handle the uploaded file
+            console.log("Uploading file: " + apkFile.name);
+          } else {
+            console.log("No file selected.");
+          }
+        }
+      </script>
+  </body>
+</html>
